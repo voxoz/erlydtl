@@ -1,8 +1,15 @@
 -module(erlydtl_runtime).
-
--compile(export_all).
+-export([find_value/3, find_value/2, fetch_value/3,find_deep_value/2,
+         regroup/2,translate/3,are_equal/2,is_false/1,is_true/1,
+         'in'/2,'not'/1,'or'/2,'and'/2,'eq'/2,'ne'/2,'le'/2,'ge'/2,'gt'/2,'lt'/2,
+         stringify_final/2,to_list/2,init_counter_stats/1,init_counter_stats/2,
+         increment_counter_stats/1, x/0,
+         forloop/3,push_ifchanged_context/0,pop_ifchanged_context/0,ifchanged/1,
+         ifchanged2/2,cycle/2,widthratio/3,spaceless/1,read_file/4]).
 
 -define(IFCHANGED_CONTEXT_VARIABLE, erlydtl_ifchanged_context).
+
+x() -> increment_counter_stats(init_counter_stats([])).
 
 find_value(Key, Data, Options) when is_atom(Key), is_tuple(Data) ->
     Rec = element(1, Data),
