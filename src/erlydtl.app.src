@@ -1,9 +1,7 @@
-%% -*- mode: erlang -*-
 {application, erlydtl,
- [{description, "ErlyDTL compiles the Django Template Language to Erlang bytecode"},
+ [{description, "DTL Django Template Language"},
   {vsn, git},
-  {modules, [
-            ]},
+  {modules, []},
   {applications, [kernel, stdlib, compiler, syntax_tools]},
   {registered, []}
  ]}.
